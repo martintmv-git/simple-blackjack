@@ -13,7 +13,7 @@ window.addEventListener("orientationchange", () => {
     if (screen.orientation.angle === 90) {
         orientationMessage.style.display = "none";
     } else {
-        orientationMessage.style.display = "block";
+        orientationMessage.style.display = "block"; 
     }
 });
 
@@ -51,7 +51,7 @@ function startGame() {
     hidden = deck.pop();
     dealerSum += getValue(hidden);
     dealerAceCount += checkAce(hidden);
-    document.getElementById("dealer-sum").innerHTML = dealerSum;
+    document.getElementById("dealer-sum").classList.add("hidden"); // Add this line
     while (dealerSum < 17) {
         let cardImg = document.createElement("img");
         let card = deck.pop();
@@ -100,10 +100,10 @@ function hit() {
     function stay() {
         dealerSum = reduceAce(dealerSum, dealerAceCount);
         yourSum = reduceAce(yourSum, yourAceCount);
-    
         canHit = false;
         document.getElementById("hidden").src = "./cards/" + hidden + ".png";
-    
+        document.getElementById("dealer-sum").classList.remove("hidden"); // Add this line
+        document.getElementById("dealer-sum").innerHTML = dealerSum; // Add this line
         let message = "";
         if (yourSum > 21) {
             message = "You lose";

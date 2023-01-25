@@ -2,6 +2,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+.hidden {
+    display: none;
+}
 #orientation-message {
     display: none;
     position: fixed;
