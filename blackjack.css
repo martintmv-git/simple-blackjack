@@ -67,8 +67,8 @@ body {
     outline: none;
 }
 #stay:hover {
-    background-color: #23c483;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    background-color: #db9618;
+    box-shadow: 0px 15px 20px rgba(207, 188, 9, 0.4);
     color: #fff;
     transform: translateY(-7px);
 

@@ -80,6 +80,14 @@ function startGame() {
 
 function hit() {
     if (!canHit) {
+        if (yourSum > 21) {
+            document.getElementById("message").innerHTML = "You lose";
+            canHit = false;
+            document.getElementById("hit").style.display = "none";
+            document.getElementById("stay").style.display = "none";
+            return;
+        }
+
         return;
     }
 
@@ -92,10 +100,20 @@ function hit() {
     document.getElementById("your-sum").innerHTML = yourSum;
 
     if (reduceAce(yourSum, yourAceCount) > 21) { 
-        canHit = false;
-    }
+        let message = ""; 
+        if (yourSum > 21) {
+            message = "You lose";
+            document.getElementById("hit").style.display = "none";
+            document.getElementById("stay").style.display = "none";
+            canHit = false;
+        } else if (dealerSum > 21) {
+            message = "You win";
+        }
     
+        document.getElementById("message").innerHTML = message;
     }
+}
+
     
     function stay() {
         dealerSum = reduceAce(dealerSum, dealerAceCount);
@@ -104,7 +122,8 @@ function hit() {
         document.getElementById("hidden").src = "./cards/" + hidden + ".png";
         document.getElementById("dealer-sum").classList.remove("hidden"); // Add this line
         document.getElementById("dealer-sum").innerHTML = dealerSum; // Add this line
-        let message = "";
+        
+        let message = ""; 
         if (yourSum > 21) {
             message = "You lose";
         } else if (dealerSum > 21) {
@@ -118,6 +137,10 @@ function hit() {
         }
     
         document.getElementById("message").innerHTML = message;
+        if(message === "You lose" || message === "You win"){
+            document.getElementById("hit").style.display = "none";
+            document.getElementById("stay").style.display = "none";
+        }
     
     }
     
