@@ -57,7 +57,6 @@ body {
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
     transform: translateY(-7px);
-
 }
 #stay {
     padding: 1.3em 3em;
@@ -79,7 +78,6 @@ body {
     box-shadow: 0px 15px 20px rgba(207, 188, 9, 0.4);
     color: #fff;
     transform: translateY(-7px);
-
 }
 #restart {
     padding: 1.3em 3em;
@@ -105,3 +103,25 @@ body {
 #restart:active {
     transform: translateY(-1px);
   }
+  @media (max-width: 450px) {
+    #dealer-cards img, #your-cards img {
+        height: 122.5px;
+        width: 93.75px;
+    }
+}
+
+@media (max-width: 480px) {
+    #hit:hover, #stay:hover {
+        background-color: #fff;
+        box-shadow: none;
+        color: #000;
+        transform: none;
+    }
+}
+@media (max-width: 480px) {
+    #hit:active, #stay:active {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #000;
+    transform: scale(0.95);
+    }
+    }
