@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background: rgba(241, 241, 241, 0.393); 
+    background: #427e60;
 }
 .hidden {
     display: none;
